@@ -32,3 +32,19 @@ class custom_dataset:
     file: str = "examples/custom_dataset.py"
     train_split: str = "train"
     test_split: str = "validation"
+
+@dataclass
+class AMR2_dataset:
+    dataset: str = "AMR2_dataset"
+    file: str = "AMR_finetune/custom_dataset.py"
+    data_path: str = "AMR_finetune/AMR2.0"
+    train_split: str = "train"
+    test_split: str = "dev"
+
+@dataclass
+class AMR3_dataset:
+    dataset: str = "AMR3_dataset"
+    file: str = "AMR_finetune/custom_dataset.py"
+    data_path: str = "AMR_finetune/AMR3.0"
+    train_split: str = "train"
+    test_split: str = "dev"
