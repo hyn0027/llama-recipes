@@ -54,6 +54,9 @@ DATASET_PREPROC = {
     "grammar_dataset": get_grammar_dataset,
     "samsum_dataset": get_samsum_dataset,
     "custom_dataset": get_custom_dataset,
+    "AMR2_dataset": get_custom_dataset,
+    "AMR3_dataset": get_custom_dataset,
+    "SilverData": get_custom_dataset,
 }
 
 

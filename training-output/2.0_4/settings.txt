@@ -1,0 +1,7 @@
+torchrun --nnodes 1 --nproc_per_node 8  examples/finetuning.py \
+    --dataset "AMR2_dataset" \
+    --enable_fsdp --use_peft --peft_method lora \
+    --model_name /workspace/ModelWeights/llama-2-7b-hf \
+    --fsdp_config.pure_bf16 \
+    --output_dir /workspace/llama-recipes/training-output/2.0_4 \
+    --num_epochs 10 --lr 2e-4 > log.txt 2>&1

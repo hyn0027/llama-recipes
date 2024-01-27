@@ -23,7 +23,7 @@ class alpaca_dataset:
     dataset: str = "alpaca_dataset"
     train_split: str = "train"
     test_split: str = "val"
-    data_path: str = "src/llama_recipes/datasets/alpaca_data.json"
+    data_path: str = "src/llama_recipes/datasets/alpacbiza_data.json"
     
     
 @dataclass
@@ -36,15 +36,23 @@ class custom_dataset:
 @dataclass
 class AMR2_dataset:
     dataset: str = "AMR2_dataset"
-    file: str = "AMR_finetune/custom_dataset.py"
-    data_path: str = "AMR_finetune/AMR2.0"
+    file: str = "AMR_function/custom_dataset.py"
+    data_path: str = "AMR_function/AMR2.0"
     train_split: str = "train"
     test_split: str = "dev"
 
 @dataclass
 class AMR3_dataset:
     dataset: str = "AMR3_dataset"
-    file: str = "AMR_finetune/custom_dataset.py"
-    data_path: str = "AMR_finetune/AMR3.0"
+    file: str = "AMR_function/custom_dataset.py"
+    data_path: str = "AMR_function/AMR3.0"
+    train_split: str = "train"
+    test_split: str = "dev"
+
+@dataclass
+class SilverData:
+    dataset: str = "SilverData"
+    file: str = "AMR_function/custom_dataset.py"
+    data_path: str = "AMR_function/SilverData"
     train_split: str = "train"
     test_split: str = "dev"

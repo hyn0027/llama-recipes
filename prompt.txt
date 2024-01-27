@@ -1,0 +1,5 @@
+Translate this AMR graph into natural language text:
+
+multi-sentence :snt1 ( support :mode imperative :arg0 you :arg1 ( person :arg0-of ( start :arg1 thread ) ) :manner resolute ) :snt2 ( reply :arg0 i :arg2 ( compose :arg0 i :arg1 poem ) )
+---
+Translation:

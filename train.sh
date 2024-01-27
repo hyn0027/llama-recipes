@@ -1,16 +1,7 @@
-# python -m llama_recipes.finetuning --dataset "custom_dataset" --custom_dataset.file "examples/custom_dataset.py" [TRAINING PARAMETERS]
-
-# torchrun --nnodes 1 --nproc_per_node 1  examples/finetuning.py \
-#     --dataset "AMR2_dataset" \
-#     --enable_fsdp --use_peft --peft_method lora \
-#     --model_name /workspace/ModelWeights/llama-2-7b-hf \
-#     --fsdp_config.pure_bf16 \
-#     --output_dir /workspace/llama-recipes/training
-
-
-torchrun --nnodes 1 --nproc_per_node 1  examples/finetuning.py \
-    --dataset "custom_dataset" \
+torchrun --nnodes 1 --nproc_per_node 8  examples/finetuning.py \
+    --dataset "SilverData" \
     --enable_fsdp --use_peft --peft_method lora \
     --model_name /workspace/ModelWeights/llama-2-7b-hf \
     --fsdp_config.pure_bf16 \
-    --output_dir /workspace/llama-recipes/training
+    --output_dir /workspace/llama-recipes/training-output/silver_0 \
+    --num_epochs 20 --lr 1e-4 > log.txt 2>&1

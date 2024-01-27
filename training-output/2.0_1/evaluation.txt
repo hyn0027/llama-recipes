@@ -1,0 +1,4 @@
+Successfully read 1371 sentence pairs.
+sacrebleu score (corpus bleu): 37.9592
+chrf++ score: 69.2757
+meteor score: 38.8165
