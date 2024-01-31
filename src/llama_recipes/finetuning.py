@@ -9,7 +9,7 @@ import random
 
 import torch
 import torch.optim as optim
-from peft import get_peft_model, prepare_model_for_int8_training
+from peft import get_peft_model, prepare_model_for_int8_training, PeftModel
 from torch.distributed.fsdp import (
     FullyShardedDataParallel as FSDP,
 )
@@ -107,6 +107,7 @@ def main(**kwargs):
             device_map="auto" if train_config.quantization else None,
             use_cache=use_cache,
         )
+    
     if train_config.enable_fsdp and train_config.use_fast_kernels:
         """
         For FSDP and FSDP+PEFT, setting 'use_fast_kernels' will enable
@@ -135,7 +136,11 @@ def main(**kwargs):
 
     if train_config.use_peft:
         peft_config = generate_peft_config(train_config, kwargs)
-        model = get_peft_model(model, peft_config)
+        if train_config.peft_model == "":
+            model = get_peft_model(model, peft_config)
+        if train_config.peft_model != "":
+            print("Loading PEFT model from: ", train_config.peft_model)
+            model = PeftModel.from_pretrained(model, train_config.peft_model, config=peft_config, is_trainable=True)
         model.print_trainable_parameters()
 
     #setting up FSDP if enable_fsdp is enabled
