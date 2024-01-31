@@ -45,6 +45,7 @@ def main(
     torch.manual_seed(seed)
     
     model = load_model(model_name, quantization)
+    
     if peft_model:
         model = load_peft_model(model, peft_model)
 

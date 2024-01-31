@@ -87,7 +87,7 @@ class AMRDataset(Dataset):
         # assert len(self.graph_edge) == len(self.graph_node) == len(self.graph_info) == len(self.sequence_source) == len(self.sequence_target)
 
         assert len(self.sequence_source) == len(self.sequence_target)
-        self.length = len(self.graph_edge)
+        self.length = len(self.sequence_source)
 
     def __len__(self):
         return self.length
