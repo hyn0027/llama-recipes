@@ -1,4 +1,4 @@
-CUDA_VISIBLE_DEVICES=6 python AMR_function/inference.py /workspace/ModelWeights/llama-2-7b-hf \
+CUDA_VISIBLE_DEVICES=0 python AMR_function/inference.py /workspace/ModelWeights/llama-2-7b-hf \
     --peft_model /workspace/llama-recipes/training-output/3.0_1 \
     --temperature 0.1 \
     --max_new_tokens 1024 \
