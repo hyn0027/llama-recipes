@@ -1,4 +1,4 @@
-DATA_DIR=/workspace/Data
+DATA_DIR=/home/hyn0027/workspace/Data
 AMR_NAME=$1
 
 mkdir -p ${AMR_NAME}

@@ -1,0 +1,3 @@
+[submodule "AMR_evaluate/meteor"]
+	path = AMR_evaluate/meteor
+	url = https://github.com/cmu-mtlab/meteor

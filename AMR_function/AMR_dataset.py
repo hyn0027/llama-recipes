@@ -254,6 +254,25 @@ def check_edges(example_list, left, right):
 def combine_all_files_in_dir(dir):
     amr_list = []
     files = os.listdir(dir)
+    if dir.find("test") != -1 and dir.find("2.0") != -1:
+        # 按含有子串的顺序 含有bolt的在第一个，然后 proxy dfa consensus xinhua
+        new_file = []
+        for item in files:
+            if item.find("bolt") != -1:
+                new_file.append(item)
+        for item in files:
+            if item.find("proxy") != -1:
+                new_file.append(item)
+        for item in files:
+            if item.find("dfa") != -1:
+                new_file.append(item)
+        for item in files:
+            if item.find("consensus") != -1:
+                new_file.append(item)
+        for item in files:
+            if item.find("xinhua") != -1:
+                new_file.append(item)
+        files = new_file
     file = files[0]
     amr_example = ''
     for file in files:
@@ -396,10 +415,14 @@ if __name__ == '__main__':
     args=parser.parse_args()
     print(args)
     train_path = [os.path.join(args.dir_path, 'training')]
+    dev_path = ""
+    test_path = ""
     if args.only_train == 'false':
         dev_path = [os.path.join(args.dir_path, 'dev')]
         test_path = [os.path.join(args.dir_path, 'test')]
     train_output_path = os.path.join(args.output_dir_path, 'train')
+    dev_output_path = ""
+    test_output_path = ""
     if args.only_train == 'false':
         dev_output_path = os.path.join(args.output_dir_path, 'dev')
         test_output_path = os.path.join(args.output_dir_path, 'test')

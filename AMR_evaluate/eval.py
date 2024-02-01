@@ -1,6 +1,6 @@
 import os
 import sys
-from sacrebleu import corpus_bleu
+from sacrebleu.compat import corpus_bleu
 from nltk.translate.chrf_score import corpus_chrf
 import matplotlib.pyplot as plt
 plt.figure(figsize=(8, 6))
